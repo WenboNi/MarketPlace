@@ -1,6 +1,7 @@
 .logo {
     font-size: 50px;
     font-weight: 700;
+    background-color: white;
     margin: 15px;
     padding: 15px;
     font-family: 'Pacifico', sans-serif;
@@ -73,4 +74,15 @@
     border-radius: 4px;
     padding: 15px;
     max-width: 720px;
+}
+.form-group {
+    padding: 10px;
+}
+.form-input, .login-input {
+    margin: 5px;
+}
+.form-subheading {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 700;
 }
