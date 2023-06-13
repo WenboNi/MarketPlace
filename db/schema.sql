@@ -1,0 +1,5 @@
+-- DROP DATABASE
+DROP DATABASE IF EXISTS marketplace_db;
+
+-- CREATE DATABASE
+CREATE DATABASE marketplace_db;
