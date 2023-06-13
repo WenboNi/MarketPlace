@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketplace</title>
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div>
+    <header>
+      <h1>
+        <a href="/">Logo</a>
+      </h1>
+      <nav>
+        <a href="/buy">Buy</a>
+        <a href="/sell">Sell</a>
+        <a href="/logout">Logout</a>
+        <a href="/login">Login</a>
+      </nav>
+    </header>
+    <main>
+        <div class="sell-container">
+            <div class="photo-upload"></div>
+            <div class="sell-info-container">
+                <label for="name">What are you selling?</label>
+                <input id="name" type="text"></input><br>
+        
+                <label for="price">How much are you selling it for?</label>
+                <input id="price" type="text"></input><br>
+        
+                <label for="condition">How would you rate the condition of your product. (10=new, 0=unusable)</label>
+                <input id="condition" type="text"></input><br>
+        
+                <label for="description">Describe your product.</label>
+                <textarea name="description" id="description" cols="30" rows="6"></textarea><br>
+        
+                <label for="location">Which city are you in?</label>
+                <input id="location" type="text"></input><br>
+        
+                <label for="contact-info">What is your contact info?</label>
+                <input id="contact-info" type="text"></input><br>
+            </div>
+            <button class="submit-btn">Submit</button>
+        </div>
+    </main>
+    <footer>
+      
+    </footer>
+  </div>
+</body>
+</html>
