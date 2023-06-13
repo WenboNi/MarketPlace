@@ -1,0 +1,76 @@
+.logo {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 15px;
+    padding: 15px;
+    font-family: 'Pacifico', sans-serif;
+    
+}
+.desc {
+    font-size: 20px;
+    font-weight: 400;
+    padding: 15px;
+    font-family: 'Pacifico', sans-serif;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-btn {
+    border: solid 1px black;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+    max-width: 720px;
+}
+
+.logout-btn {
+    display: none;
+}
+
+.buy-btn {
+    display: none;
+}
+
+.sell-btn {
+    display: none;
+}
+
+.sell-form {
+    display: flex;
+    justify-content: center;
+}
+.sell-container {
+    border: solid 1px black;
+    border-radius: 4px;
+    padding: 15px;
+    max-width: 720px;
+}
+.sell-info-container {
+    border: solid 1px black;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+.sell-label {
+    padding: 5px;
+}
+
+.submit-btn {
+    padding: 5px;
+    margin: 15px;
+}
+
+.form-card {
+    display: flex;
+    justify-content: center;
+}
+.form-container {
+    
+    border: solid 1px black;
+    border-radius: 4px;
+    padding: 15px;
+    max-width: 720px;
+}

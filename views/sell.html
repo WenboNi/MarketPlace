@@ -5,47 +5,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marketplace</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="../public/css/reset.css">
+  <link rel="stylesheet" href="../public/css/style.css">
+  <!-- change below and css to change font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+
 </head>
 
 <body>
   <div>
-    <header>
-      <h1>
-        <a href="/">Logo</a>
+    <header class="container text-center header-container">
+      <h1 class="row justify-content-center logo-container">
+        <a class="logo col-5" href="/">Logo</a>
       </h1>
-      <nav>
-        <a href="/buy">Buy</a>
-        <a href="/sell">Sell</a>
-        <a href="/logout">Logout</a>
-        <a href="/login">Login</a>
+      <h6 class="row justify-content-center desc-container">
+        <p class="desc col-5">A marketplace app</p>
+      </h6>
+      <nav class="row align-items-start nav-container">
+        <a class="col nav-btn buy-btn" href="/buy">Buy</a>
+        <a class="col nav-btn sell-btn" href="/sell">Sell</a>
+        <a class="col nav-btn logout-btn" href="/logout">Log Out</a>
+        <a class="col nav-btn login-btn" href="/login">Log In/Sign Up</a>
       </nav>
     </header>
     <main>
-        <div class="sell-container">
-            <div class="photo-upload"></div>
-            <div class="sell-info-container">
-                <label for="name">What are you selling?</label>
-                <input id="name" type="text"></input><br>
-        
-                <label for="price">How much are you selling it for?</label>
-                <input id="price" type="text"></input><br>
-        
-                <label for="condition">How would you rate the condition of your product. (10=new, 0=unusable)</label>
-                <input id="condition" type="text"></input><br>
-        
-                <label for="description">Describe your product.</label>
-                <textarea name="description" id="description" cols="30" rows="6"></textarea><br>
-        
-                <label for="location">Which city are you in?</label>
-                <input id="location" type="text"></input><br>
-        
-                <label for="contact-info">What is your contact info?</label>
-                <input id="contact-info" type="text"></input><br>
+      <form class="sell-form">
+        <div class="row justify-content-center sell-container">
+            <div class="col-6 photo-upload">
+              <label for="sellImage">Upload your image here</label>
             </div>
-            <button class="submit-btn">Submit</button>
+            <div class="row col-6 sell-info-container">
+                <label class="sell-label" for="name">What are you selling?</label>
+                <input class="sell-input" id="name" type="text"></input><br>
+
+                <label class="sell-label" for="category">Select a category.</label>
+                <select class="sell-input" id="category">
+                  <option value="option1">option1</option>
+                  <option value="option2">option2</option>
+                  <option value="option3">option3</option>
+                  <option value="option4">option4</option>
+                  <option value="option5">option5</option>
+                </select><br>
+
+                <label class="sell-label" for="price">How much are you selling it for?</label>
+                <input class="sell-input" id="price" type="text"></input><br>
+        
+                <label class="sell-label" for="condition">Rate the condition of your product. (10=new, 0=unusable)</label>
+                <input class="sell-input" id="condition" type="text"></input><br>
+        
+                <label class="sell-label" for="description">Describe your product.</label>
+                <textarea class="sell-input" name="description" id="description" cols="30" rows="6"></textarea><br>
+        
+                <label class="sell-label" for="location">Which city are you in?</label>
+                <input class="sell-input" id="location" type="text"></input><br>
+        
+                <label class="sell-label" for="email">What is your email address?</label>
+                <input class="sell-input" id="email" type="text"></input><br>
+            </div>
+            <button class="btn btn-primary submit-btn">Submit</button>
         </div>
+      </form>
     </main>
     <footer>
       
