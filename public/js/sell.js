@@ -14,13 +14,13 @@ submitButtonEl.addEventListener('click', function(event) {
     event.preventDefault();
     
     const sellItemObject = {
-        name: nameEl.value,
+        product_name: nameEl.value,
         category: categoryEl.value,
         price: priceEl.value,
         condition: conditionEl.value,
         description: descriptionEl.value,
-        location: locationEl.value,
-        contact: contactEl.value
+        city: locationEl.value,
+        contact_info: contactEl.value
     };
 
     const file = sellImageEl.files[0];
@@ -35,9 +35,11 @@ submitButtonEl.addEventListener('click', function(event) {
 
         const sellItemJSON = JSON.stringify(sellItemObject);
 
+        //use sellItemJSON when doing POST function
         console.log(sellItemJSON);
+
     };
     reader.readAsDataURL(file);
 });
 
-
+module.exports = { sellItemJSON, sellItemObject }
