@@ -1,15 +1,18 @@
-const User = require('./user');
-const Landscape = require('./landscape');
+// import all models
 
-User.hasOne(Landscape, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-})
+const User = require('./Product');
+const Landscape = require('./Category');
 
-//belongsTo ---> Table ---> foreign key defined 
-Landscape.belongsTo(User, {
-    foreignKey: 'user_id'
-});
+// Products belongsTo Category
+Product.belongsTo(Category, {
+    foreignKey: 'category_id',
+    onDelete: 'CASCADE',
+  })
+  
+  // Categories have many Products
+  Category.hasMany(Product, {
+    foreignKey: 'category_id',
+    onDelete: 'CASCADE',
+  })
 
-// 1:1 association between User : Landscape
-module.exports = { User, Landscape } 
+module.exports = { Product, Category } ;
