@@ -55,6 +55,24 @@ Product.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
+    stock: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 1,
+        validate: {
+          min: 1,
+          max: 10,
+        },
+      },
+    image: {
+        type: DataTypes.STRING, // Assuming you're storing the image path or URL as a string
+        allowNull: false, // Set to false if image is required
+        validate: {
+            isUrl: {
+              msg: 'Invalid image URL.',
+            },
+      },
+    },
   },
   {
     sequelize,
