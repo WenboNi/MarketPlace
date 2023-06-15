@@ -21,6 +21,9 @@ async function newFormHandler(event) {
         //need to make list using this 
         console.log(json);
 
+        const buyList = document.getElementById('buy-list')
+        
+
 
     } catch (error) {
         console.error(error);
