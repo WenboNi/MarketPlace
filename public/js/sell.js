@@ -1,13 +1,13 @@
 async function newFormHandler(event) {
     event.preventDefault();
     
-    const product_name = document.getElementById('name').value;
+    const product_name = document.getElementById('name').value.trim();
     const category = document.getElementById('category').value;
-    const price = document.getElementById('price').value;
-    const condition = document.getElementById('condition').value;
-    const description = document.getElementById('description').value;
-    const location = document.getElementById('location').value;
-    const contact_info = document.getElementById('contact').value;
+    const price = document.getElementById('price').value.trim();
+    const condition = document.getElementById('condition').value.trim();
+    const description = document.getElementById('description').value.trim();
+    const location = document.getElementById('location').value.trim();
+    const contact_info = document.getElementById('contact').value.trim();
     
     const sellImageEl = document.getElementById('sellImage');
     const uploadingFile = sellImageEl.files[0];

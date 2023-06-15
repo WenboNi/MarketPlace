@@ -23,25 +23,37 @@
       <nav class="row align-items-start nav-container">
         <a class="col nav-btn buy-btn" href="/buy">Buy</a>
         <a class="col nav-btn sell-btn" href="/sell">Sell</a>
-        <a class="col nav-btn logout-btn" href="/logout">Log Out</a>
+        <a class="col nav-btn logout-btn" href="/">Log Out</a>
         <a class="col nav-btn login-btn" href="/login">Log In/Sign Up</a>
       </nav>
     </header>
     <main>
-        <div class="category-dropdown">
-          choose a category
+      <div class="container text-center search-bar">
+        <div class="sbk-container row justify-content-center">
+          <label class="col-3 sbk-label" for="sbk-input">Search by keyword</label>
+          <input class="col-3 sbk-input" id="sbk" type="text"></input>
         </div>
-        <div class="search-keywords">
-          search by keywords
+        <div class="sbl-container row justify-content-center">
+          <label class="col-3 sbl-label" for="sbl-input">Search by location</label>
+          <input class="col-3 sbl-input" id="sbl" type="text"></input>
         </div>
-        <div class="search-location">
-          search by location
+        <div class="sbc-container row justify-content-center">
+          <label class="col-3 sbc-label" for="sbc-input">Search by category</label>
+                <select class="col-3 sbc-input" id="sbc">
+                  <option value="option1">All Categories</option>
+                  <option value="option2">option2</option>
+                  <option value="option3">option3</option>
+                  <option value="option4">option4</option>
+                  <option value="option5">option5</option>
+                </select><br>
         </div>
-        <div>
-            <div class="buy-list-container">
-                <div class="buy-list">list of items</div>    
-            </div>
+        <button class="btn btn-primary search-btn" id="searchButton" type="submit">Search</button>
+      </div>
+      <div>
+        <div class="buy-list-container">
+            <div class="buy-list">list of items</div>    
         </div>
+    </div>
     </main>
     <footer>
     </footer>
