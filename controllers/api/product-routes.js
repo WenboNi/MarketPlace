@@ -97,14 +97,22 @@ router.get('/:condition', async (req, res) => {
   });
 
 // Create new product
-router.post('/', (req, res) => {
-    Product.create(req.body)
-      .then((createdProduct) => {
-        res.status(200).json(createdProduct);
-      })
-      .catch((err) => {
+router.post('/sell', async (req, res) => {
+  try { 
+    const createdProduct = await Product.create({
+    product_name: req.body.product_name_name,
+    description: req.body.description,
+    category: req.body.category,
+    price: req.body.price,
+    condition: req.body.condition,
+    location: req.body.location,
+    contact_info: req.body.contact_info,
+    image: req.body.image
+  });
+  res.status(200).json(createdProduct);
+  } catch (err) {
         res.status(500).json({ message: err + "Unable to Create New Product" });
-      });
+  }
   });
 
 // Update product by ID
