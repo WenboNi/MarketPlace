@@ -3,7 +3,7 @@ const { Product } = require("../models");
 const productData = [
   {
     product_name: "Plain T-Shirt",
-    category_id: 1,
+    category: "fashion",
     price: 14.99,
     condition: 5,
     city: "New York",
@@ -14,7 +14,7 @@ const productData = [
   },
   {
     product_name: "Running Sneakers",
-    category_id: 1,
+    category: "fashion",
     price: 90.0,
     condition: 8,
     city: "Los Angeles",
@@ -25,7 +25,7 @@ const productData = [
   },
   {
     product_name: "Branded Baseball Hat",
-    category_id: 1,
+    category: "fashion",
     price: 22.99,
     condition: 6,
     city: "Chicago",
@@ -36,7 +36,7 @@ const productData = [
   },
   {
     product_name: "Wooden Coffee Table",
-    category_id: 3,
+    category: "furnitures",
     price: 199.99,
     condition: 9,
     city: "New York",
@@ -47,7 +47,7 @@ const productData = [
   },
   {
     product_name: "Leather Sofa",
-    category_id: 3,
+    category: "furnitures",
     price: 799.0,
     condition: 8,
     city: "Los Angeles",
@@ -58,7 +58,7 @@ const productData = [
   },
   {
     product_name: "Modern Dining Set",
-    category_id: 3,
+    category: "furnitures",
     price: 599.99,
     condition: 7,
     city: "Chicago",
@@ -69,7 +69,7 @@ const productData = [
   },
   {
     product_name: 'Smartphone',
-    category_id: 2,
+    category: "electronics",
     price: 799.99,
     condition: 10,
     city: 'San Francisco',
@@ -80,7 +80,7 @@ const productData = [
   },
   {
     product_name: 'Laptop',
-    category_id: 2,
+    category: "electronics",
     price: 1299.0,
     condition: 9,
     city: 'Seattle',
@@ -91,7 +91,7 @@ const productData = [
   },
   {
     product_name: 'Wireless Earphones',
-    category_id: 2,
+    category: "electronics",
     price: 99.99,
     condition: 8,
     city: 'Miami',

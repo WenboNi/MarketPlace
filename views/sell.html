@@ -25,7 +25,7 @@
       <nav class="row align-items-start nav-container">
         <a class="col nav-btn buy-btn" href="/buy">Buy</a>
         <a class="col nav-btn sell-btn" href="/sell">Sell</a>
-        <a class="col nav-btn logout-btn" href="/logout">Log Out</a>
+        <a class="col nav-btn logout-btn" href="/">Log Out</a>
         <a class="col nav-btn login-btn" href="/login">Log In/Sign Up</a>
       </nav>
     </header>
@@ -33,7 +33,8 @@
       <form class="sell-form">
         <div class="row justify-content-center sell-container">
             <div class="col-6 photo-upload">
-              <label for="sellImage">Upload your image here</label>
+              <label class="sellImageLabel" for="sellImage">Select your image here</label>
+              <input type="file" id="sellImage" name="sellImage" accept="image/png, image/jpeg">
             </div>
             <div class="row col-6 sell-info-container">
                 <label class="sell-label" for="name">What are you selling?</label>
@@ -41,17 +42,15 @@
 
                 <label class="sell-label" for="category">Select a category.</label>
                 <select class="sell-input" id="category">
-                  <option value="option1">option1</option>
-                  <option value="option2">option2</option>
-                  <option value="option3">option3</option>
-                  <option value="option4">option4</option>
-                  <option value="option5">option5</option>
+                  <option value="option1">fashion</option>
+                  <option value="option2">furnitures</option>
+                  <option value="option3">electronics</option>
                 </select><br>
 
                 <label class="sell-label" for="price">How much are you selling it for?</label>
                 <input class="sell-input" id="price" type="text"></input><br>
         
-                <label class="sell-label" for="condition">Rate the condition of your product. (10=new, 0=unusable)</label>
+                <label class="sell-label" for="condition">Rate the condition of your product. (10=new, 1=unusable)</label>
                 <input class="sell-input" id="condition" type="text"></input><br>
         
                 <label class="sell-label" for="description">Describe your product.</label>
@@ -63,7 +62,7 @@
                 <label class="sell-label" for="contact">Add your contact information.</label>
                 <input class="sell-input" id="contact" type="text"></input><br>
             </div>
-            <button class="btn btn-primary submit-btn" type="submit">Submit</button>
+            <button class="btn btn-primary submit-btn" id="submitButton" type="submit">Submit</button>
         </div>
       </form>
     </main>
@@ -71,5 +70,6 @@
       
     </footer>
   </div>
+  <script src="../public/js/sell.js"></script>
 </body>
 </html>
