@@ -9,7 +9,7 @@ const { Product, Category } = require('../../models');
       res.status(500).json(err);
     });
     const products = productInfo.map((product) => product.get({ plain: true }));
-    res.render('homepage', { products }); 
+    res.render('homepage', { products, loggedIn: req.session.loggedIn }); 
 });
 
  // Get One product by ID, including its associate Category
@@ -23,7 +23,7 @@ router.get('/product/:id', async (req, res) => {
         return;
       }
       const product = productInfo.get({ plain: true });
-      res.render('homepage', product);
+      res.render('homepage', {product, loggedIn: req.session.loggedIn });
     } catch (err) {
       res.status(500).json(err);
     }
