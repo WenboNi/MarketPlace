@@ -1,7 +1,7 @@
 // import all models
+const Product = require('./Product');
+const User = require('./User');
 
-const User = require('./Product');
-const Landscape = require('./Category');
 
 // Products belongsTo Category
 Product.belongsTo(Category, {
@@ -9,10 +9,24 @@ Product.belongsTo(Category, {
     onDelete: 'CASCADE',
   })
   
-  // Categories have many Products
-  Category.hasMany(Product, {
+// Categories have many Products
+Category.hasMany(Product, {
     foreignKey: 'category_id',
     onDelete: 'CASCADE',
   })
 
-module.exports = { Product, Category } ;
+// User has many Products
+User.hasMany(Product, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
+  });
+
+// Products belongsTo User
+Product.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
+  });
+
+
+//export all models
+module.exports = { Product, User } ;
