@@ -25,7 +25,7 @@ async function newFormHandler(event) {
         category,
         price,
         condition,
-        location,
+        city,
         contact_info,
         image
       }),
