@@ -36,7 +36,7 @@ const productData = [
   },
   {
     product_name: "Wooden Coffee Table",
-    category: "furniture",
+    category: "furnitures",
     price: 199.99,
     condition: 9,
     city: "New York",
@@ -47,7 +47,7 @@ const productData = [
   },
   {
     product_name: "Leather Sofa",
-    category: "furniture",
+    category: "furnitures",
     price: 799.0,
     condition: 8,
     city: "Los Angeles",
@@ -58,7 +58,7 @@ const productData = [
   },
   {
     product_name: "Modern Dining Set",
-    category: "furniture",
+    category: "furnitures",
     price: 599.99,
     condition: 7,
     city: "Chicago",
