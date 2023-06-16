@@ -2,7 +2,6 @@
 const Product = require('./Product');
 const User = require('./User');
 
-
 // User has many Products
 User.hasMany(Product, {
     foreignKey: 'user_id',
