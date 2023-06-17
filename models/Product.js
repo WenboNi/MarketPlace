@@ -48,7 +48,7 @@ Product.init(
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    description: {
+    item_description: {
         type: DataTypes.STRING,
         allowNull: false,
     },

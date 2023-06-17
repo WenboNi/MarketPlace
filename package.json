@@ -1,10 +1,11 @@
 {
   "name": "sequelize-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "1. npm install 2. node server.js 2. Hit the POST endpoint for User to create a user 3. Hit the POST endpoint for Landscape to create a Landscape (make sure to include the user_id) for an existing user 4. Hit the GET endpoints to see the magic!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +16,7 @@
     "express": "^4.18.2",
     "express-handlebars": "^7.0.7",
     "faker": "^5.5.3",
-    "mysql2": "^3.3.2",
-    "sequelize": "^6.31.1"
+    "mysql2": "^3.3.5",
+    "sequelize": "^6.32.0"
   }
 }

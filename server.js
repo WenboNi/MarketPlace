@@ -2,7 +2,7 @@
 require('dotenv').config()
 const express = require('express');
 const sequelize = require('./config/connection');
-const session = require('exprss-session')
+const session = require('express-session')
 
 const seed = require('./seed');
 const exphbs = require('express-handlebars');
@@ -33,4 +33,3 @@ app.use(require('./controllers/routes'));
 app.listen(PORT, () => {
     console.log('Server listening on: http://localhost:' + PORT);
   });
-

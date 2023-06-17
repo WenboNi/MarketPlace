@@ -3,7 +3,7 @@ const { Product } = require("../models");
 const productData = [
   {
     product_name: "Plain T-Shirt",
-    category: "fashion",
+    category: "sports",
     price: 14.99,
     item_condition: 5,
     city: "New York",
@@ -14,7 +14,7 @@ const productData = [
   },
   {
     product_name: "Running Sneakers",
-    category: "fashion",
+    category: "sports",
     price: 90.0,
     item_condition: 8,
     city: "Los Angeles",
@@ -25,7 +25,7 @@ const productData = [
   },
   {
     product_name: "Branded Baseball Hat",
-    category: "fashion",
+    category: "sports",
     price: 22.99,
     item_condition: 6,
     city: "Chicago",
