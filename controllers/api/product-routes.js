@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Product, Category } = require('../../models');
+const { Product } = require('../../models');
 
 // The `/api/products` endpoint
 
@@ -7,9 +7,7 @@ const { Product, Category } = require('../../models');
 router.get('/all', async (req, res) => {
     // find all products
     try {
-      const productInfo = await Product.findAll({
-        include: [{ model: Category }],
-      });
+      const productInfo = await Product.findAll();
       res.status(200).json(productInfo);
     } catch (err) {
       res.status(500).json(err);
@@ -19,9 +17,7 @@ router.get('/all', async (req, res) => {
  // Get One product by ID, including its associate Category
 router.get('/:id', async (req, res) => {
     try {
-      const productInfo = await Product.findByPk(req.params.id, {
-        include: [{ model: Category }],
-      });
+      const productInfo = await Product.findByPk(req.params.id);
       if (!productInfo) {
         res.status(404).json({message: 'Product ID Not Found! Please Enter Valid ID#'});
         return;
@@ -35,9 +31,7 @@ router.get('/:id', async (req, res) => {
  // Get product(s) by Name, including its associate Category
 router.get('/:product_name', async (req, res) => {
     try {
-      const productInfo = await Product.findAll(req.params.product_name, {
-        include: [{ model: Category }],
-      });
+      const productInfo = await Product.findAll(req.params.product_name);
       if (!productInfo) {
         res.status(404).json({message: 'Product Name Not Found! Please Enter Valid Product'});
         return;
@@ -51,9 +45,7 @@ router.get('/:product_name', async (req, res) => {
  // Get product(s) by City, including its associate Category
 router.get('/:city', async (req, res) => {
     try {
-      const productInfo = await Product.findAll(req.params.city, {
-        include: [{ model: Category }],
-      });
+      const productInfo = await Product.findAll(req.params.city);
       if (!productInfo) {
         res.status(404).json({message: 'City Not Found! Please Enter Valid City with Product(s) for sale'});
         return;
@@ -67,11 +59,9 @@ router.get('/:city', async (req, res) => {
  // Get product(s) by price, including its associate Category
 router.get('/:price', async (req, res) => {
     try {
-      const productInfo = await Product.findAll(req.params.price, {
-        include: [{ model: Category }],
-      });
+      const productInfo = await Product.findAll(req.params.price);
       if (!productInfo) {
-        res.status(404).json({message: 'Price Not Found! Please Enter Valid Price with Product(s) for sale'});
+        res.status(404).json({message: 'Price Not Found! Please Enter Valid Price of Product(s) for sale'});
         return;
       }
       res.status(200).json(productInfo);
@@ -83,9 +73,7 @@ router.get('/:price', async (req, res) => {
  // Get product(s) by condition, including its associate Category
 router.get('/:condition', async (req, res) => {
     try {
-      const productInfo = await Product.findAll(req.params.condition, {
-        include: [{ model: Category }],
-      });
+      const productInfo = await Product.findAll(req.params.condition);
       if (!productInfo) {
         res.status(404).json({message: 'Condition Not Found! Please Enter Valid Product Condition Between 1 & 10'});
         return;
@@ -101,10 +89,10 @@ router.post('/sell', async (req, res) => {
   try { 
     const createdProduct = await Product.create({
     product_name: req.body.product_name_name,
-    description: req.body.description,
+    item_description: req.body.description,
     category: req.body.category,
     price: req.body.price,
-    condition: req.body.condition,
+    item_condition: req.body.condition,
     location: req.body.location,
     contact_info: req.body.contact_info,
     image: req.body.image

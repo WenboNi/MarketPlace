@@ -45,7 +45,7 @@ Product.init(
         allowNull: false,
     },
     contact_info: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     item_description: {
