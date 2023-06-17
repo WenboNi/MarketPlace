@@ -32,7 +32,7 @@ Product.init(
         isDecimal: true,
       },
     },
-    condition: {
+    item_condition: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
