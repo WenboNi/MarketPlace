@@ -4,39 +4,65 @@ const { Product } = require('../../models');
 // The `/api/products` endpoint
 
  // get all products, including its associated Category
-router.get('/all', async (req, res) => {
-    // find all products
-    router.get('/', async (req, res) => {
-      const productInfo = await Product.findAll({
-        include: [{
-          model: User, attributes: ["username"]
-        }]
-    }) .catch((err) => {
-      res.status(500).json(err);
-    }); 
-    const products = productInfo.map((product) => product.get({ plain: true }));
-    // res.render('homepage', {product, loggedIn: req.session.loggedIn });
-    res.status(200).json(products)})
+ router.get('/', async (req, res) => {
+  const productInfo = await Product.findAll().catch((err) => {
+    res.json(err);
   });
+  res.json(productInfo);
+});
 
  // Get One product by ID, including its associate Category
-router.get('/:id', async (req, res) => {
-    try {
-      const productInfo = await Product.findByPk(req.params.id);
-      if (!productInfo) {
-        res.status(404).json({message: 'Product ID Not Found! Please Enter Valid ID#'});
-        return;
-      }
-      res.status(200).json(productInfo);
-    } catch (err) {
-      res.status(500).json(err);
+router.get('/id/:id', async (req, res) => {
+  try {
+    const productInfo = await Product.findByPk(req.params.id);
+    if (!productInfo) {
+      res.status(404).json({message: 'Product ID Not Found! Please Enter Valid ID#'});
+      return;
     }
-  });
+    res.status(200).json(productInfo);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/query', async (req, res) => {
+  try {
+    const product_name = req.query.product_name;
+    const city = req.query.city;
+    const category = req.query.category;
+
+    const whereClause = {};
+
+    if (category) {
+      whereClause.category = category;
+    }
+
+    if (product_name) {
+      whereClause.product_name = product_name;
+    }
+
+    if (city) {
+      whereClause.city = city;
+    }
+
+    const productResults = await Product.findAll({
+      where: whereClause,
+    });
+
+    res.status(200).json(productResults);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
  // Get product(s) by Name, including its associate Category
-router.get('/:product_name', async (req, res) => {
+router.get('/name/:product_name', async (req, res) => {
     try {
-      const productInfo = await Product.findAll(req.params.product_name);
+      const productInfo = await Product.findAll({
+        where: {
+          product_name: req.params.product_name
+        }
+      });
       if (!productInfo) {
         res.status(404).json({message: 'Product Name Not Found! Please Enter Valid Product'});
         return;
@@ -48,9 +74,13 @@ router.get('/:product_name', async (req, res) => {
   });
 
  // Get product(s) by City, including its associate Category
-router.get('/:city', async (req, res) => {
+router.get('/city/:city', async (req, res) => {
     try {
-      const productInfo = await Product.findAll(req.params.city);
+      const productInfo = await Product.findAll({
+        where: {
+          city: req.params.city
+        }
+      });
       if (!productInfo) {
         res.status(404).json({message: 'City Not Found! Please Enter Valid City with Product(s) for sale'});
         return;
@@ -61,10 +91,14 @@ router.get('/:city', async (req, res) => {
     }
   });
 
- // Get product(s) by price, including its associate Category
-router.get('/:price', async (req, res) => {
+ // Get product(s) by Category, including its associate Category
+router.get('/category/:category', async (req, res) => {
     try {
-      const productInfo = await Product.findAll(req.params.price);
+      const productInfo = await Product.findAll({
+        where: {
+          category: req.params.category
+        }
+      });
       if (!productInfo) {
         res.status(404).json({message: 'Price Not Found! Please Enter Valid Price of Product(s) for sale'});
         return;

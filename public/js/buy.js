@@ -1,12 +1,14 @@
 async function newFormHandler(event) {
     event.preventDefault();
+    // need to fix a bug where the list adds on instead of replaces
 
     const searchByKeyword = document.getElementById('sbk').value.trim();
     const searchByLocation = document.getElementById('sbl').value.trim();
     const searchByCategory = document.getElementById('sbc').value;
+    
 
-    const apiUrl = `/api/buy?product_name=${encodeURIComponent(searchByKeyword)}&city=${encodeURIComponent(searchByLocation)}&category=${encodeURIComponent(searchByCategory)}`;
-
+    const apiUrl = `/api/products/query?product_name=${encodeURIComponent(searchByKeyword)}&city=${encodeURIComponent(searchByLocation)}&category=${encodeURIComponent(searchByCategory)}`;
+    console.log(apiUrl);
     try {
         const response = await fetch(apiUrl, {
         method: 'GET',
@@ -18,38 +20,43 @@ async function newFormHandler(event) {
 
         const productResults = await response.json();
 
-        //need to make list using this 
         console.log(productResults);
         function productsRender () {
+            const buyListEl = document.getElementById('buy-list');
+
             for(var i = 0; i < productResults.length; i++) {
 
-                const buyListEl = document.getElementById('buy-list');
-
+                const listContainer = document.createElement('ul');
+                listContainer.setAttribute("class", "container text-center")
+                listContainer.setAttribute("id", "list-container")
+               
                 const productImg = document.createElement("img");
                 productImg.setAttribute("id", "product-img-list")
-                buyListEl.appendChild(productImg)
+                listContainer.appendChild(productImg)
 
                 const productName = document.createElement('li');
                 productName.setAttribute("id", "product-name-list")
-                buyListEl.appendChild(productName)
+                listContainer.appendChild(productName)
 
                 const productCategory = document.createElement('li');
                 productCategory.setAttribute("id", "product-category-list")
-                buyListEl.appendChild(productCategory)
+                listContainer.appendChild(productCategory)
 
                 const productLocation = document.createElement('li');
                 productLocation.setAttribute("id", "product-location-list")
-                buyListEl.appendChild(productLocation)
+                listContainer.appendChild(productLocation)
 
                 const productPrice = document.createElement('li');
                 productPrice.setAttribute("id", "product-price-list")
-                buyListEl.appendChild(productPrice)
+                listContainer.appendChild(productPrice)
 
                 productName.innerHTML = productResults[i].product_name;
                 productImg.setAttribute("src", productResults[i].image);
-                productCategory.innerHTML = productResults[i].category;
-                productLocation.innerHTML = productResults[i].city;
-                productPrice.innerHTML = productResults[i].location;
+                productCategory.innerHTML ="Category: " + productResults[i].category;
+                productLocation.innerHTML = "City: " + productResults[i].city;
+                productPrice.innerHTML = "$" + productResults[i].price;
+
+                buyListEl.appendChild(listContainer);
             }
         }
         productsRender();
@@ -60,6 +67,3 @@ async function newFormHandler(event) {
 }
 
 document.getElementById('searchButton').addEventListener('click', newFormHandler);
-
-module.exports = productResults;
-

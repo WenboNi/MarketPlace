@@ -4,9 +4,9 @@ async function newFormHandler(event) {
     const product_name = document.getElementById('name').value.trim();
     const category = document.getElementById('category').value;
     const price = document.getElementById('price').value.trim();
-    const condition = document.getElementById('condition').value.trim();
-    const description = document.getElementById('description').value.trim();
-    const location = document.getElementById('location').value.trim();
+    const item_condition = document.getElementById('condition').value.trim();
+    const item_description = document.getElementById('description').value.trim();
+    const city = document.getElementById('location').value.trim();
     const contact_info = document.getElementById('contact').value.trim();
     
     const sellImageEl = document.getElementById('sellImage');
@@ -21,10 +21,10 @@ async function newFormHandler(event) {
       method: 'POST',
       body: JSON.stringify({
         product_name,
-        description,
+        item_description,
         category,
         price,
-        condition,
+        item_condition,
         city,
         contact_info,
         image
