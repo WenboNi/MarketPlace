@@ -1,15 +1,16 @@
 // Dependecies
-const path = require('path')
+require('dotenv').config()
 const express = require('express');
 const sequelize = require('./config/connection');
 const session = require('express-session')
+
+const seed = require('./seed');
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
-const routes = require('./controllers');
 
 // Set up the Express App
 const app = express();
-const PORT = process.env.PORT || 3333;
+const PORT = process.env.PORT || 3001;
 
 // Set up Sessions
 const sess = {
@@ -25,13 +26,10 @@ app.use(session(sess));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(routes);
+app.use(require('./controllers/routes'));
 
 // Start the server to begin listening
-
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Server listening on: http://localhost:' + PORT))
-});
+app.listen(PORT, () => {
+    console.log('Server listening on: http://localhost:' + PORT);
+  });
