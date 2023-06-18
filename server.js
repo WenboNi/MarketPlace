@@ -9,7 +9,7 @@ const routes = require('./controllers');
 
 // Set up the Express App
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3333;
 
 // Set up Sessions
 const sess = {
@@ -31,9 +31,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 // Start the server to begin listening
-app.listen(PORT, () => {
-    console.log('Server listening on: http://localhost:' + PORT);
-  });
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Server listening on: http://localhost:' + PORT))

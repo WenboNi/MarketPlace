@@ -11,6 +11,7 @@ const productData = [
     item_description: "A plain t-shirt for everyday wear.",
     stock: 1,
     image: "https://example.com/images/plain-tshirt.jpg",
+    user_id: 1
   },
   {
     product_name: "Running Sneakers",
@@ -22,6 +23,7 @@ const productData = [
     item_description: "High-performance running sneakers.",
     stock: 2,
     image: "https://example.com/images/running-sneakers.jpg",
+    user_id: 1
   },
   {
     product_name: "Branded Baseball Hat",
@@ -33,6 +35,7 @@ const productData = [
     item_description: "A stylish baseball hat with a brand logo.",
     stock: 3,
     image: "https://example.com/images/baseball-hat.jpg",
+    user_id: 1
   },
   {
     product_name: "Wooden Coffee Table",
@@ -44,6 +47,7 @@ const productData = [
     item_description: "A beautiful wooden coffee table for your living room.",
     stock: 1,
     image: "https://example.com/images/wooden-coffee-table.jpg",
+    user_id: 2
   },
   {
     product_name: "Leather Sofa",
@@ -55,6 +59,7 @@ const productData = [
     item_description: "A luxurious leather sofa for ultimate comfort.",
     stock: 1,
     image: "https://example.com/images/leather-sofa.jpg",
+    user_id: 2
   },
   {
     product_name: "Modern Dining Set",
@@ -66,6 +71,7 @@ const productData = [
     item_description: "A sleek and stylish dining set for your home.",
     stock: 1,
     image: "https://example.com/images/modern-dining-set.jpg",
+    user_id: 2
   },
   {
     product_name: 'Smartphone',
@@ -77,6 +83,7 @@ const productData = [
     item_description: 'The latest smartphone with advanced features.',
     stock: 1,
     image: 'https://example.com/images/smartphone.jpg',
+    user_id: 3
   },
   {
     product_name: 'Laptop',
@@ -88,6 +95,7 @@ const productData = [
     item_description: 'A powerful laptop for all your computing needs.',
     stock: 1,
     image: 'https://example.com/images/laptop.jpg',
+    user_id: 3
   },
   {
     product_name: 'Wireless Earphones',
@@ -99,6 +107,7 @@ const productData = [
     item_description: 'High-quality wireless earphones for immersive audio.',
     stock: 1,
     image: 'https://example.com/images/wireless-earphones.jpg',
+    user_id: 4
   },
 
 ];

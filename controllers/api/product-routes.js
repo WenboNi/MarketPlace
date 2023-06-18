@@ -6,12 +6,17 @@ const { Product } = require('../../models');
  // get all products, including its associated Category
 router.get('/all', async (req, res) => {
     // find all products
-    try {
-      const productInfo = await Product.findAll();
-      res.status(200).json(productInfo);
-    } catch (err) {
+    router.get('/', async (req, res) => {
+      const productInfo = await Product.findAll({
+        include: [{
+          model: User, attributes: ["username"]
+        }]
+    }) .catch((err) => {
       res.status(500).json(err);
-    }
+    }); 
+    const products = productInfo.map((product) => product.get({ plain: true }));
+    // res.render('homepage', {product, loggedIn: req.session.loggedIn });
+    res.status(200).json(products)})
   });
 
  // Get One product by ID, including its associate Category
@@ -87,16 +92,16 @@ router.get('/:condition', async (req, res) => {
 // Create new product
 router.post('/sell', async (req, res) => {
   try { 
-    const createdProduct = await Product.create({
-    product_name: req.body.product_name_name,
-    item_description: req.body.description,
-    category: req.body.category,
-    price: req.body.price,
-    item_condition: req.body.condition,
-    location: req.body.location,
-    contact_info: req.body.contact_info,
-    image: req.body.image
-  });
+    const createdProduct = await Product.create(req.body
+    // product_name: req.body,
+    // item_description: req.body,
+    // category: req.body.category,
+    // price: req.body.price,
+    // item_condition: req.body.condition,
+    // city: req.body.city,
+    // contact_info: req.body.contact_info,
+    // image: req.body.image
+  );
   res.status(200).json(createdProduct);
   } catch (err) {
         res.status(500).json({ message: err + "Unable to Create New Product" });
