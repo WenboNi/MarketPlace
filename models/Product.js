@@ -63,12 +63,7 @@ Product.init(
       },
     image: {
         type: DataTypes.STRING, // Assuming you're storing the image path or URL as a string
-        allowNull: false, // Set to false if image is required
-        validate: {
-            isUrl: {
-              msg: 'Invalid image URL.',
-            },
-      },
+        allowNull: true, // Set to false if image is required
     },
     user_id: {
       type: DataTypes.INTEGER,

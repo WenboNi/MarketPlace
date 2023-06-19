@@ -7,10 +7,10 @@ const productData = [
     price: 14.99,
     item_condition: 5,
     city: "New York",
-    contact_info: '6456899999',
+    contact_info: "6456899999",
     item_description: "A plain t-shirt for everyday wear.",
     stock: 1,
-    image: "https://example.com/images/plain-tshirt.jpg",
+    image: "assets/image/plain_t-shirt.jpg",
     user_id: 1
   },
   {
@@ -19,10 +19,10 @@ const productData = [
     price: 90.0,
     item_condition: 8,
     city: "Los Angeles",
-    contact_info: '6543219876',
+    contact_info: "6543219876",
     item_description: "High-performance running sneakers.",
     stock: 2,
-    image: "https://example.com/images/running-sneakers.jpg",
+    image: "assets/image/running_sneakers.jpg",
     user_id: 1
   },
   {
@@ -31,10 +31,10 @@ const productData = [
     price: 22.99,
     item_condition: 6,
     city: "Chicago",
-    contact_info: '9876543210',
+    contact_info: "9876543210",
     item_description: "A stylish baseball hat with a brand logo.",
     stock: 3,
-    image: "https://example.com/images/baseball-hat.jpg",
+    image: "assets/image/branded_baseball_hat.jpg",
     user_id: 1
   },
   {
@@ -43,10 +43,10 @@ const productData = [
     price: 199.99,
     item_condition: 9,
     city: "New York",
-    contact_info: '6456899999',
+    contact_info: "6456899999",
     item_description: "A beautiful wooden coffee table for your living room.",
     stock: 1,
-    image: "https://example.com/images/wooden-coffee-table.jpg",
+    image: "assets/image/wooden_coffee_table.jpg",
     user_id: 2
   },
   {
@@ -55,10 +55,10 @@ const productData = [
     price: 799.0,
     item_condition: 8,
     city: "Los Angeles",
-    contact_info: '6543219876',
+    contact_info: "6543219876",
     item_description: "A luxurious leather sofa for ultimate comfort.",
     stock: 1,
-    image: "https://example.com/images/leather-sofa.jpg",
+    image: "assets/image/leather_sofa.jpg",
     user_id: 2
   },
   {
@@ -67,10 +67,10 @@ const productData = [
     price: 599.99,
     item_condition: 7,
     city: "Chicago",
-    contact_info: '9876543210',
+    contact_info: "9876543210",
     item_description: "A sleek and stylish dining set for your home.",
     stock: 1,
-    image: "https://example.com/images/modern-dining-set.jpg",
+    image: "assets/image/modern_dining_set.jpg",
     user_id: 2
   },
   {
@@ -79,10 +79,10 @@ const productData = [
     price: 799.99,
     item_condition: 10,
     city: 'San Francisco',
-    contact_info: '1234567890',
+    contact_info: "1234567890",
     item_description: 'The latest smartphone with advanced features.',
     stock: 1,
-    image: 'https://example.com/images/smartphone.jpg',
+    image: 'assets/image/smartphone.jpg',
     user_id: 3
   },
   {
@@ -91,10 +91,10 @@ const productData = [
     price: 1299.0,
     item_condition: 9,
     city: 'Seattle',
-    contact_info: '9876543212',
+    contact_info: "9876543212",
     item_description: 'A powerful laptop for all your computing needs.',
     stock: 1,
-    image: 'https://example.com/images/laptop.jpg',
+    image: 'assets/image/laptop.jpg',
     user_id: 3
   },
   {
@@ -103,10 +103,10 @@ const productData = [
     price: 99.99,
     item_condition: 8,
     city: 'Miami',
-    contact_info: '4567891230',
+    contact_info: "4567891230",
     item_description: 'High-quality wireless earphones for immersive audio.',
     stock: 1,
-    image: 'https://example.com/images/wireless-earphones.jpg',
+    image: 'assets/image/wireless_earphones.jpg',
     user_id: 4
   },
 

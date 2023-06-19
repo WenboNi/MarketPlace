@@ -1,5 +1,8 @@
 const router = require('express').Router();
 const { Product } = require('../../models');
+const multer = require('multer');
+
+const upload = multer({ dest: '../../public/assets/image/' }); 
 
 // The `/api/products` endpoint
 
@@ -24,7 +27,7 @@ router.get('/id/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+// Get multiple products by query filter
 router.get('/query', async (req, res) => {
   try {
     const product_name = req.query.product_name;
@@ -53,7 +56,7 @@ router.get('/query', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-});
+})
 
  // Get product(s) by Name, including its associate Category
 router.get('/name/:product_name', async (req, res) => {
@@ -126,19 +129,19 @@ router.get('/:condition', async (req, res) => {
 // Create new product
 router.post('/sell', async (req, res) => {
   try { 
-    const createdProduct = await Product.create(req.body
-    // product_name: req.body,
-    // item_description: req.body,
-    // category: req.body.category,
-    // price: req.body.price,
-    // item_condition: req.body.condition,
-    // city: req.body.city,
-    // contact_info: req.body.contact_info,
-    // image: req.body.image
+    const createdProduct = await Product.create({
+    product_name: req.body.product_name,
+    item_description: req.body.item_description,
+    category: req.body.category,
+    price: req.body.price,
+    item_condition: req.body.item_condition,
+    city: req.body.city,
+    contact_info: req.body.contact_info,
+    image: req.body.image}
   );
   res.status(200).json(createdProduct);
   } catch (err) {
-        res.status(500).json({ message: err + "Unable to Create New Product" });
+  res.status(500).json({ message: "Unable to Create New Product" });
   }
   });
 
