@@ -1,5 +1,7 @@
 async function renderAll (){
-const response = await fetch('/api/products/', {
+
+    const apiUrl = `/api/products/query?`;
+const response = await fetch(apiUrl, {
 method: 'GET',
 });
 
@@ -11,11 +13,13 @@ const productResults = await response.json();
 
 console.log(productResults);
 function productsRender () {
+    const sortedProducts = productResults.sort((a, b) => b.id - a.id);
+
     const buyListEl = document.getElementById('buy-list');
 
     buyListEl.innerHTML = '';
 
-    for(var i = 0; i < productResults.length; i++) {
+    for(var i = 0; i < sortedProducts.length; i++) {
 
         const listContainer = document.createElement('ul');
         
@@ -46,27 +50,14 @@ function productsRender () {
         productCondition.setAttribute("id", "product-condition-list")
         listContainer.appendChild(productCondition)
 
-        const productStock = document.createElement('li');
-        productStock.setAttribute("id", "product-stock-list")
-        listContainer.appendChild(productStock)
+        productName.innerHTML = sortedProducts[i].product_name;
+        productImg.setAttribute("src", sortedProducts[i].image);
+        productCategory.innerHTML ="Category: " + sortedProducts[i].category;
+        productLocation.innerHTML = "City: " + sortedProducts[i].city;
+        productPrice.innerHTML = "$" + sortedProducts[i].price;
+        productCondition.innerHTML = "Condition: " + sortedProducts[i].item_condition + "/10";
+    
         
-        const productDescription = document.createElement('li');
-        productDescription.setAttribute("id", "product-description-list")
-        listContainer.appendChild(productDescription)
-
-        const productContactInfo = document.createElement('li');
-        productContactInfo.setAttribute("id", "product-contact-info-list")
-        listContainer.appendChild(productContactInfo)
-
-        productName.innerHTML = productResults[i].product_name;
-        productImg.setAttribute("src", productResults[i].image);
-        productCategory.innerHTML ="Category: " + productResults[i].category;
-        productLocation.innerHTML = "City: " + productResults[i].city;
-        productPrice.innerHTML = "$" + productResults[i].price;
-        productCondition.innerHTML = "Condition: " + productResults[i].item_condition + "/10";
-        productStock.innerHTML = "Stock: " + productResults[i].stock;
-        productDescription.innerHTML = "Description: " + productResults[i].item_description;
-        productContactInfo.innerHTML = "Phone Number: " + productResults[i].contact_info;
 
         buyListEl.appendChild(listContainer);
 

@@ -29,8 +29,14 @@ async function newFormHandler(event) {
 
                 const listContainer = document.createElement('ul');
                 
-                listContainer.setAttribute("class", "container text-center")
+                listContainer.setAttribute("class", "container text-center justify-content-center")
                 listContainer.setAttribute("id", "list-container")
+
+                const deleteBtn = document.createElement("button")
+                deleteBtn.setAttribute("id", "delete-btn");
+                deleteBtn.setAttribute("class", "btn primary-btn row justify-content-center");
+                listContainer.appendChild(deleteBtn)
+                deleteBtn.innerHTML = "X"
                
                 const productImg = document.createElement("img");
                 productImg.setAttribute("id", "product-img-list")
@@ -81,13 +87,22 @@ async function newFormHandler(event) {
                 productStock.innerHTML = "Stock: " + productResults[i].stock;
                 productDescription.innerHTML = "Description: " + productResults[i].item_description;
                 productContactInfo.innerHTML = "Phone Number: " + productResults[i].contact_info;
-                uploadUser.innerHTML = "Posted by: " + productResults[i].user.username;
+                if (productResults[i].user && productResults[i].user.username) {
+                    uploadUser.innerHTML = "Posted by: " + productResults[i].user.username;
+                  }
 
                 buyListEl.appendChild(listContainer);
 
-                listContainer.addEventListener('click', function (){
-                   
-                })
+                // const deleteUrl = `/api/products/delete/${id}`
+
+                // deleteBtn.addEventListener('click', async function (){
+                //     const response = await fetch(deleteUrl, {
+                //         method: 'DELETE',
+                
+                //         if (!response.ok) {
+                //         throw new Error('API request failed');
+                //         }
+                // })
             }
         }
         productsRender();
