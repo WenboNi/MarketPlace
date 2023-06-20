@@ -55,6 +55,7 @@ Product.init(
     stock: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        defaultValue: 1,
         validate: {
           min: 1,
           max: 10,
