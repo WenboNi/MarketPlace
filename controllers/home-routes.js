@@ -3,14 +3,14 @@ const { Product, User } = require('../models');
 
  // get all products, including its associated Category
  router.get('/', async (req, res) => {
-    //   const productInfo = await Product.findAll({
-    //     include: [{
-    //       model: User, attributes: ["username"]
-    //     }]
-    // }) .catch((err) => {
-    //   res.status(500).json(err);
-    // }); 
-    // const products = productInfo.map((product) => product.get({ plain: true }));
+      const productInfo = await Product.findAll({
+        include: [{
+          model: User, attributes: ["username"]
+        }]
+    }) .catch((err) => {
+      res.status(500).json(err);
+    }); 
+    const products = productInfo.map((product) => product.get({ plain: true }));
     res.render('homepage', {
       loggedIn: req.session.loggedIn 
     });
