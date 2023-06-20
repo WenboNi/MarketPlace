@@ -9,8 +9,12 @@ async function newFormHandler(event) {
   const item_description = document.getElementById('description').value.trim();
   const city = document.getElementById('location').value.trim();
   const contact_info = document.getElementById('contact').value.trim();
-  const image = document.getElementById("sellImage").file[0];
-  
+
+  const imageEl = document.getElementById("sellImage").files[0];
+  const image = "assets/image/" + imageEl.name
+
+  console.log(image);
+
   const payload = {
     product_name,
     item_description,
@@ -19,7 +23,8 @@ async function newFormHandler(event) {
     stock,
     item_condition,
     city,
-    contact_info
+    contact_info,
+    image
   };
   console.log(payload);
 
@@ -33,6 +38,11 @@ async function newFormHandler(event) {
     });
 
     if (response.ok) {
+      const imageUp = await fetch(`/upload`,{
+        method: 'POST',
+        body: imageEl
+      })
+      console.log(imageUp);
       // document.location.replace('/sell-success');
     } else {
       // document.location.replace('/sell-fail');
