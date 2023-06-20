@@ -9,17 +9,17 @@ const userData = [
     {
         username: 'Karen Graves',
         email: 'Karen_Graves@gmail.com',
-        password: 'SecretPassword1'
+        password: 'SecretPassword'
     },
     {
         username: 'Frank Li',
         email: 'Frank_li123@gmail.com',
-        password: 'SecretPassword2'
+        password: 'SecretPassword'
     },
     {
         username: 'Samantha Peterson',
         email: 'Samantha_Pete@gmail.com',
-        password: 'SecretPassword3'
+        password: 'SecretPassword'
     },
 ];
 
