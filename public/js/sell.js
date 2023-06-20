@@ -10,8 +10,8 @@ async function newFormHandler(event) {
   const city = document.getElementById('location').value.trim();
   const contact_info = document.getElementById('contact').value.trim();
 
-  const imageEl = document.getElementById("sellImage").files[0];
-  const image = "assets/image/" + imageEl.name
+  // const imageEl = document.getElementById("sellImage").files[0];
+  // const image = "assets/image/" + imageEl.name
 
   console.log(image);
 
@@ -24,7 +24,7 @@ async function newFormHandler(event) {
     item_condition,
     city,
     contact_info,
-    image
+    // image
   };
   console.log(payload);
 
