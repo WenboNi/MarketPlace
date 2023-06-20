@@ -35,11 +35,13 @@ router.get('/login', async (req,res) =>{
 
 router.get('/success', async (req,res) =>{
   res.render('success', {
+    loggedIn: req.session.loggedIn
   });
 })
 
 router.get('/fail', async (req,res) =>{
   res.render('fail', {
+    loggedIn: req.session.loggedIn
   });
 })
 

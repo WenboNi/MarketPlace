@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Product } = require('../../models');
+const { Product, User } = require('../../models');
 
 // The `/api/products` endpoint
 
@@ -46,8 +46,13 @@ router.get('/query', async (req, res) => {
     }
 
     const productResults = await Product.findAll({
-      where: whereClause,
+      include: [{
+        model: User, attributes: ["username"]
+      }],
+      where: whereClause
+      
     });
+
 
     res.status(200).json(productResults);
   } catch (err) {

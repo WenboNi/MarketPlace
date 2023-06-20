@@ -68,6 +68,10 @@ async function newFormHandler(event) {
                 productContactInfo.setAttribute("id", "product-contact-info-list")
                 listContainer.appendChild(productContactInfo)
 
+                const uploadUser = document.createElement('li');
+                uploadUser.setAttribute("id", "user-who-uploaded")
+                listContainer.appendChild(uploadUser)
+
                 productName.innerHTML = productResults[i].product_name;
                 productImg.setAttribute("src", productResults[i].image);
                 productCategory.innerHTML ="Category: " + productResults[i].category;
@@ -77,6 +81,7 @@ async function newFormHandler(event) {
                 productStock.innerHTML = "Stock: " + productResults[i].stock;
                 productDescription.innerHTML = "Description: " + productResults[i].item_description;
                 productContactInfo.innerHTML = "Phone Number: " + productResults[i].contact_info;
+                uploadUser.innerHTML = "Posted by: " + productResults[i].user.username;
 
                 buyListEl.appendChild(listContainer);
 
