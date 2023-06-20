@@ -13,7 +13,7 @@ async function newFormHandler(event) {
   // const imageEl = document.getElementById("sellImage").files[0];
   // const image = "assets/image/" + imageEl.name
 
-  console.log(image);
+  // console.log(image);
 
   const payload = {
     product_name,
