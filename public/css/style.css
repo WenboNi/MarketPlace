@@ -1,31 +1,36 @@
-body{
-        background-image: url(../assets/image/pexels-karolina-grabowska-5632371.jpg);
-        background-size: cover;
-        
-        
-    }
-
-
-.logo {
+body {
+    background-image: url(../assets/image/pexels-karolina-grabowska-5632371.jpg);
+    background-size: cover;
+  }
+  
+  .logo {
     font-size: 50px;
     font-weight: 700;
     margin: 15px;
     padding: 15px;
     font-family: 'Pacifico', sans-serif;
-    
-}
-.desc {
+    color: #1d8abc;
+  }
+  
+  .desc {
     font-size: 20px;
     font-weight: 400;
     padding: 15px;
     font-family: 'Pacifico', sans-serif;
-}
-
-.nav-container {
+    color: #1d8abc;
+  }
+  
+  .nav-container {
     display: flex;
     justify-content: center;
-}
-
+  }
+  
+  .logo:hover,
+  .desc:hover {
+    color:#ffffff;
+    cursor: pointer;
+  }
+  
 .nav-btn {
     
     display: inline-block;
@@ -55,6 +60,17 @@ body{
     
 }
 
+.buy-page-style {
+    font-size: small;
+    border: solid 1px #1d8abc;
+    border-radius: 4px;
+    padding: 15px;
+    font-family:'Pacifico' ;
+    border-style: groove;
+    color:   #ffffff;
+    font-size: 20px;
+}
+
 /* .logout-btn {
     
                    
@@ -78,114 +94,211 @@ body{
 .sell-form {
     display: flex;
     justify-content: center;
-}
-.sell-container {
-    border: solid 1px black;
+  }
+  
+  .sell-container {
+    border: 1px solid black;
     border-radius: 4px;
     padding: 15px;
     max-width: 720px;
-}
-.sell-info-container {
-    border: solid 1px black;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .sell-info-container {
+    border: 1px solid #1d8abc;
     border-radius: 4px;
     padding: 15px;
-}
-
-.sell-label {
+    font-family: monospace;
+    color: #000;
+    font-size: 25px;
+    background-color: #f5f5f5;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .sell-label {
     padding: 5px;
-}
+    font-weight: bold;
+  }
+  
+  /* Dynamic Hover Effect */
+  .sell-container:hover,
+  .sell-info-container:hover {
+    border-color: #1d8abc;
+  }
+  
+  /* Dynamic Focus Effect */
+  .sell-container:focus,
+  .sell-info-container:focus {
+    outline: none;
+    border-color: #1d8abc;
+    box-shadow: 0 0 5px rgba(29, 138, 188, 0.3);
+  }
+
+  
 
 .submit-btn {
-    padding: 5px;
-    margin: 15px;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    margin: 20px;
+    border-radius: 500px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 16px 14px 18px;
+    color: #fff;
+    background-color: #1d8abc;
+    height: 48px;
+    :hover{
+        background-color: #1d8abc;
+    }
 }
 
-.form-card {
-    display: flex;
-    justify-content: center;
-}
-.form-container {
-    
-    border: solid 1px black;
-    border-radius: 4px;
-    padding: 15px;
-    max-width: 720px;
-}
 .form-group {
     padding: 10px;
-}
-.form-input, .login-input {
+  }
+  
+  .form-input,
+  .login-input {
     margin: 5px;
-}
-.form-subheading {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-subheading {
     margin: 10px;
     font-size: 20px;
-    font-weight: 700;
-}
-.photo-upload {
-    border: solid 1px black;
+    font-weight: bold;
+    font-family: 'pacifico';
+  }
+  
+  .photo-upload {
+    border: 1px solid #000;
     border-radius: 4px;
     margin-right: 20px;
-}
-.sellImageLabel {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+  }
+  
+  .sellImageLabel {
     padding: 10px;
     font-size: 20px;
-    font-weight: 700;
-}
-.search-bar {
-    border: solid 1px black;
+    font-weight: bold;
+    font-family: monospace;
+    color: #000;
+    background-color: #f5f5f5;
     border-radius: 4px;
-    padding: 15px;
-    max-width: 720px;
-}
+  }
+  
+  /* Dynamic Focus Effect */
+  .form-input:focus,
+  .login-input:focus,
+  .photo-upload:focus,
+  .sellImageLabel:focus {
+    outline: none;
+    border-color: #1d8abc;
+    box-shadow: 0 0 5px rgba(29, 138, 188, 0.3);
+  }
+  
+  
 .search-btn {
-    margin: 10px;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    margin: 20px;
+    border-radius: 500px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 16px 14px 18px;
+    color: #fff;
+    background-color: #1d8abc;
+    height: 48px;
+    :hover{
+        background-color: #1d8abc;
+    }
 }
+    
 
 li {
     list-style: none;
-}
-
-#list-container {
-    border: solid 1px black;
+  }
+  
+  #list-container {
+    border: 1px solid black;
     border-radius: 4px;
     padding: 15px;
     max-width: 720px;
-}
-
-#product-name-list {
-    font-size: 20px;
+    font-family: monospace;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  #product-name-list,
+  #product-price-list {
+    font-size: 30px;
     font-weight: 700;
-}
-
-#product-price-list {
-    font-size: 20px;
-    font-weight: 700;
-}
-
+    font-family: monospace;
+  }
+  
+  /* Dynamic Hover Effect */
+  #list-container:hover {
+    border-color: #1d8abc;
+  }
+  
+  #list-container:hover #product-name-list,
+  #list-container:hover #product-price-list {
+    color: #1d8abc;
+  }
+  
 .required {
-    font-size: 5px;
-    text-align: right;
+  font-size: 5px;
+  text-align: right;
 }
 
-.about {
-    border: solid 1px black;
-    border-radius: 4px;
-    padding: 15px;
-    max-width: 600px;
-    text-align: center;
-    font-size: 20px;
+.about,
+.result-container {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 15px;
+  max-width: 600px;
+  text-align: center;
+  font-size: 20px;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .result-message {
-    font-size: 20px;
-    font-weight: 700;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Pacifico', sans-serif;
 }
-.result-container {
-    border: solid 1px black;
-    border-radius: 4px;
-    padding: 15px;
-    max-width: 600px;
-    text-align: center;
-    font-size: 20px;
+
+/* Dynamic Hover Effect */
+.about:hover,
+.result-container:hover {
+  border-color: #1d8abc;
+}
+
+/* Dynamic Focus Effect */
+.about:focus,
+.result-container:focus {
+  outline: none;
+  border-color: #1d8abc;
+  box-shadow: 0 0 5px rgba(29, 138, 188, 0.3);
 }
