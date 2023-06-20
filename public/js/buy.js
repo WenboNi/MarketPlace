@@ -31,6 +31,12 @@ async function newFormHandler(event) {
                 
                 listContainer.setAttribute("class", "container text-center")
                 listContainer.setAttribute("id", "list-container")
+
+                const deleteBtn = document.createElement("button")
+                deleteBtn.setAttribute("id", "delete-btn");
+                deleteBtn.setAttribute("class", "justify-content-right");
+                listContainer.appendChild(deleteBtn)
+                deleteBtn.innerHTML = "X"
                
                 const productImg = document.createElement("img");
                 productImg.setAttribute("id", "product-img-list")
@@ -85,9 +91,16 @@ async function newFormHandler(event) {
 
                 buyListEl.appendChild(listContainer);
 
-                listContainer.addEventListener('click', function (){
-                   
-                })
+                // const deleteUrl = `/api/products/delete/${id}`
+
+                // deleteBtn.addEventListener('click', async function (){
+                //     const response = await fetch(deleteUrl, {
+                //         method: 'DELETE',
+                
+                //         if (!response.ok) {
+                //         throw new Error('API request failed');
+                //         }
+                // })
             }
         }
         productsRender();
