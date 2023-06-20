@@ -1,8 +1,5 @@
 const router = require('express').Router();
 const { Product } = require('../../models');
-const multer = require('multer');
-
-const upload = multer({ dest: '../../public/assets/image/' }); 
 
 // The `/api/products` endpoint
 

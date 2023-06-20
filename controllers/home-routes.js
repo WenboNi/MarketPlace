@@ -33,5 +33,16 @@ router.get('/login', async (req,res) =>{
   });
 })
 
+router.get('/success', async (req,res) =>{
+  res.render('success', {
+  });
+})
+
+router.get('/fail', async (req,res) =>{
+  res.render('fail', {
+  });
+})
+
+
 
 module.exports = router;

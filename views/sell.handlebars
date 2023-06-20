@@ -5,32 +5,33 @@
         <input type="file" id="sellImage" name="sellImage" accept="image/png, image/jpeg">
       </div>
       <div class="row col-6 sell-info-container">
-          <label class="sell-label" for="name">What are you selling?</label>
+          <p class="required">* required</p>
+          <label class="sell-label" for="name">What are you selling?*</label>
           <input class="sell-input" id="name" type="text"></input><br>
 
-          <label class="sell-label" for="category">Select a category.</label>
+          <label class="sell-label" for="category">Select a category.*</label>
           <select class="sell-input" id="category">
             <option value="sports">sports</option>
             <option value="furnitures">furnitures</option>
             <option value="electronics">electronics</option>
           </select><br>
 
-          <label class="sell-label" for="price">How much are you selling it for?($)</label>
+          <label class="sell-label" for="price">How much are you selling it for?* ($)</label>
           <input class="sell-input" id="price" type="text"></input><br>
 
-          <label class="sell-label" for="stock">How many are you selling?(max: 10)</label>
+          <label class="sell-label" for="stock">How many are you selling?* (max: 10)</label>
           <input class="sell-input" id="stock" type="text"></input><br>
   
-          <label class="sell-label" for="condition">Rate the condition of your product. (10=new, 1=unusable)</label>
+          <label class="sell-label" for="condition">Rate the condition of your product.* (10=new, 1=unusable)</label>
           <input class="sell-input" id="condition" type="text"></input><br>
   
-          <label class="sell-label" for="description">Describe your product.</label>
+          <label class="sell-label" for="description">Describe your product.*</label>
           <textarea class="sell-input" name="description" id="description" cols="30" rows="6"></textarea><br>
   
-          <label class="sell-label" for="location">Which city are you in?</label>
+          <label class="sell-label" for="location">Which city are you in?*</label>
           <input class="sell-input" id="location" type="text"></input><br>
   
-          <label class="sell-label" for="contact">Add your phone number.</label>
+          <label class="sell-label" for="contact">Add your phone number.*</label>
           <input class="sell-input" id="contact" type="text"></input><br>
       </div>
       <button class="btn btn-primary submit-btn" id="submitButton" type="submit">Submit</button>
