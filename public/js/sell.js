@@ -38,18 +38,12 @@ async function newFormHandler(event) {
     });
 
     if (response.ok) {
-      const imageUp = await fetch(`/upload`,{
-        method: 'POST',
-        body: imageEl
-      })
-      console.log(imageUp);
-      // document.location.replace('/sell-success');
+      document.location.replace('/success');
     } else {
-      // document.location.replace('/sell-fail');
+      document.location.replace('/fail');
     }
   } catch (error) {
     console.error(error);
-    // Handle error
   }
 }
 
